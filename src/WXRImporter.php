@@ -851,6 +851,8 @@ class WXRImporter extends \WP_Importer {
 		}
 
 		$postdata = apply_filters( 'wp_import_post_data_processed', $postdata, $data );
+		
+		$postdata = wp_slash( $postdata );
 
 		if ( 'attachment' === $postdata['post_type'] ) {
 			if ( ! $this->options['fetch_attachments'] ) {
