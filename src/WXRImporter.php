@@ -2070,7 +2070,7 @@ class WXRImporter extends \WP_Importer {
 
 			// Run the update
 			$data['ID'] = $post_id;
-			$result = wp_update_post( $data, true );
+			$result = wp_update_post( wp_slash( $data ), true );
 			if ( is_wp_error( $result ) ) {
 				$this->logger->warning( sprintf(
 					__( 'Could not update "%s" (post #%d) with mapped data', 'wordpress-importer' ),
